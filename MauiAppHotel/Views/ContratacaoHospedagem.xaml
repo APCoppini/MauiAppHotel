@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Gray100}">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10"
+                         Spacing="10"
+                         Background="Green">
+
+        <Label Text="Calcule sua Diária"
+               FontFamily="Kalam"
+               FontSize="40"
+               TextColor="{StaticResource Black}" />
+
+        <Frame Padding="10">
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="2*, *, *"
+                      BackgroundColor="Aqua">
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Adultos (Máximo 4):" />
+
+                    <Label Grid.Row="0" Grid.Column="1"
+                           TextColor="{StaticResource Magenta}"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_adultos}"/>
+
+                    <Stepper Grid.Row="0" Grid.Column="2"
+                             x:Name="stp_adultos"
+                             Minimum="0"
+                             Maximum="4"
+                             Increment="1" />
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Crianças (Máximo 6):" />
+
+                    <Label Grid.Row="1" Grid.Column="1"
+                           TextColor="{StaticResource Magenta}"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_criancas}"/>
+
+                    <Stepper Grid.Row="1" Grid.Column="2"
+                             x:Name="stp_criancas"
+                             Minimum="0"
+                             Maximum="6"
+                             Increment="1" />
+                </Grid>
+
+                <Frame Padding="10" Margin="10">
+                    <VerticalStackLayout>
+
+                        <Label Text="Escolha sua Suíte"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"
+                               TextColor="{StaticResource Primary}"/>
+
+                        <Picker x:Name="pck_quarto"
+                                Title="Selecione seu Tipo de Quarto" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Padding="10"
+                       Margin="10">
+                    <VerticalStackLayout Spacing="10">
+
+                        <Label Text="Período da Hospedagem"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"
+                               TextColor="{StaticResource Primary}"/>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Check-in:" />
+                            <DatePicker x:Name="dtpck_checkin"
+                                        Format="dd/MM/yyyy" 
+                                        TextColor="Red"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Check-out:" />
+                            <DatePicker x:Name="dtpck_checkout"
+                                        Format="dd/MM/yyyy" 
+                                        TextColor="Red"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+
+
+                    <Button Text="Reservar" Clicked="Button_Clicked"
+                            BackgroundColor="Aqua"  
+                            TextColor="Black"  
+                            FontFamily="AncizarSerif-bold"  
+                            FontSize="18"  
+                            CornerRadius="15"  
+                            HeightRequest="50">
+                </Button>
+
+                <Button Text="Sobre" Clicked="Button_Clicked"
+                    BackgroundColor="Brown"  
+                            TextColor="White"  
+                            FontFamily="AncizarSerif-bold"  
+                            FontSize="18"  
+                            CornerRadius="15"  
+                            HeightRequest="50">
+
+                </Button>
+
+
+
+
+
+            </VerticalStackLayout>
+         </Frame>
+
+    </VerticalStackLayout>
+
+</ContentPage>

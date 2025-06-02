@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre"
+             Title="Sobre"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource  SecondaryDarkText}">
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="40" 
+                             Spacing="15"
+                             VerticalOptions="StartAndExpand">
+
+            <Label Text="Sobre"
+                   FontSize="50"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource Gray200}" />
+
+            <Frame BorderColor="Black"
+                   Padding="10"
+                   CornerRadius="10">
+
+                <Label FontSize="Micro"
+                       HorizontalOptions="Center">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Desenvolvedor: " FontAttributes="Bold" />
+                            <Span Text="APCoppini                             " />
+                            <Span Text="Ano de Desenvolvimento: " FontAttributes="Bold"/>
+                            <Span Text="2025" />
+                        </FormattedString>
+
+                    </Label.FormattedText>
+                    
+
+                </Label>
+
+            </Frame>
+
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>
